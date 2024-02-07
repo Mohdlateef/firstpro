@@ -26,3 +26,27 @@ function return_normal() {
     
     
 }
+
+let text=document.getElementById("text");
+let edit=document.getElementById("edit");
+edit.addEventListener("click",(e)=>{
+    // e.target.parentElement.remove()
+    let label=document.createElement("label");
+   label.setAttribute("for","editbtn");
+    label.innerText="complete"
+   let editbn= document.createElement("input")
+   
+   editbn.id="editbtn";
+ editbn.type="checkbox"
+ editbn.addEventListener("click",()=>{
+    console.log(editbn.checked);
+    if(editbn.checked===true)
+    {
+        label.innerText="completed";
+        edit.remove();
+    }
+ })
+editbn.placeholder="complete"
+console.log(editbn.value);
+ text.append(label,editbn);
+})
